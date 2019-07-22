@@ -42,11 +42,18 @@ def main():
     result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
                                 range=SAMPLE_RANGE_NAME,majorDimension="COLUMNS").execute()
     values = result.get('values', [])
+    
+    #get the list out of the list
+    valueslist = values[0]
+
+    #need logic here to remove all empty values from list
+    finalvalues = list(filter(None, valueslist))
 
     if not values:
         print('No data found.')
     else:
-        print(values)
+        #print(values)
+        print(finalvalues)
         #print('Name, Major:')
         #for row in values:
             # Print columns A and E, which correspond to indices 0 and 4.
