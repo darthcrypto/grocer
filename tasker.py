@@ -45,13 +45,21 @@ def main():
             print(u'{0} ({1})'.format(item['title'], item['id']))
 
      ###create a new list
-    tasklist = {
-    'title': 'Grocer Test List'
+    #tasklist = {
+    #'title': 'Bolo Test List'
+    #}
+ 
+    task = {
+        'title': 'Vegetables'
     }
 
+     #add tasklist
     #result = service.tasklists().insert(body=tasklist).execute()
     #print(result['id'])
 
+    #add task
+    result = service.tasks().insert(tasklist='dFBzS0tVTU5wS0pqbFkxdQ', body=task).execute()
+    print(result['id'])
 
 if __name__ == '__main__':
     main()
